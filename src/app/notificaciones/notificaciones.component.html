@@ -1,0 +1,51 @@
+<header class="content__title">
+  <h1>Notificaciones</h1>
+  <small>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque, maiores nostrum, ratione quisquam illo quae nisi nesciunt possimus, reprehenderit praesentium non laboriosam similique accusantium earum nam. Earum, voluptates laboriosam.
+</small>
+  <div class="actions">
+    <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
+
+
+    <div class="navigation__active dropdown actions__item" title="Estado">
+      <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a href="" class="dropdown-item">Activos</a>
+        <a href="" class="dropdown-item">Desactivados</a>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="card-demo " *ngFor="let item of notificaciones">
+  <div class="card card">
+    <!-- div class="card card card-outline-info" -->
+
+    <div class="card-header">
+      <h2 class="card-title" > {{item.titulo}}</h2>
+      <small class="card-subtitle"> {{item.tipo}}</small>
+
+
+
+      <div class="actions">
+        <a routerLink="/new/{{item.id}}" class="actions__item zmdi zmdi-edit zmdi-hc-fw" title="Editar"></a>
+        <a (click)="deleteNotification(item.id)"class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Editar"></a>
+        
+
+
+      </div>
+    </div>
+
+    <div class="card-block">
+      <p > 
+              {{item.mensaje}}
+      </p>
+
+      <p > 
+        {{item.creador}}
+</p>
+    </div>
+
+  </div>
+</div>
