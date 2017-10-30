@@ -1,5 +1,6 @@
+import {NotificacionesService} from '../notificaciones.service';
 import { Component, OnInit } from '@angular/core';
-import {NotificacionesService} from '../../app/notificaciones.service';
+
 
 @Component({
   selector: 'app-notificaciones',
@@ -10,20 +11,30 @@ export class NotificacionesComponent  {
 
   notificaciones = null;
   constructor(private db: NotificacionesService) {
-    
     this.db.getNotificacion().subscribe(
       notificaciones => {
         this.notificaciones = notificaciones;
-    
+
       }, error => {
         console.log('ocurrio un error lugares', error);
       });
 
   }
-  deleteNotification(id){
+  deleteNotification(id) {
     this.db.deleteNotification(id);
     alert('Datos Eliminados');
- 
   }
 
-}
+  buscarPorTitulo(titulo) {
+    console.log('voy a buscar: ', titulo);
+    this.db.buscarNotificaciones(titulo).subscribe(
+      busqueda => {
+        console.log('filtroes: ', busqueda);
+        this.notificaciones = busqueda;
+    });
+
+  }
+
+  }
+
+

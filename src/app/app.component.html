@@ -23,10 +23,11 @@
 
       <form class="search">
         <div class="search__inner">
-          <input id="search" (change)="buscar()" type="text" class="search__text"  placeholder="Buscar Notificación...">
+          <input id="search" type="text" class="search__text"  placeholder="Buscar Notificación...">
           <i  class="zmdi zmdi-search search__helper" data-ma-action="search-close"></i>
         </div>
       </form>
+
 
       <ul class="top-nav">
         <li class="hidden-xl-up"><a href="" data-ma-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
@@ -351,11 +352,11 @@
           </div>
         </div>
         <ul class="navigation">
-          <li onclick="this.addClass('navigation__active');" class=""><a href="/"><i class="zmdi zmdi-home"></i> Home</a></li>
+          <li><a href="calendar.html"><i class="zmdi zmdi-home"></i> Home</a></li>
 
-          <li class=""><a href="cards.html"><i class="zmdi zmdi-notifications-active zmdi-hc-fw"></i> Notificaciones</a></li>
+          <li onclick="this.addClass('navigation__active');" ><a href="/"><i class="zmdi zmdi-notifications-active zmdi-hc-fw"></i> Notificaciones</a></li>
 
-          <li class=""><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendario</a></li>
+          <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendario</a></li>
 
           <!--  <li class="navigation_active">
                             <a href="cards.html"><i class="zmdi zmdi-notifications-active zmdi-hc-fw"></i>Notificaciones</a>
@@ -453,13 +454,13 @@
                   <h5 class="modal-title pull-left">Nueva Notificación</h5>
                 </div>
                 <div class="modal-body">
-              
-    
-    
+
+
+
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-success">Guardar</button>      
-    
+                  <button type="button" class="btn btn-outline-success">Guardar</button>
+
                   <button type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
@@ -475,25 +476,25 @@
                   <h5 class="modal-title pull-left">Editar Notificación</h5>
                 </div>
                 <div class="modal-body">
-                
-    
-    
+
+
+
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-success">Guardar</button>      
-    
+                  <button type="button" class="btn btn-outline-success">Guardar</button>
+
                   <button type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
           </div>
 
-   
 
 
-   
-    
-      
+
+
+
+
       <footer class="footer hidden-xs-down">
         <p>© Desarrollado por
           <a href="">Auconsis</a>
@@ -539,6 +540,6 @@
 
   <!-- Javascript -->
   <!-- Vendors -->
-  
+
 
 </body>

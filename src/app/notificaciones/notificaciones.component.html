@@ -3,6 +3,13 @@
   <small>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque, maiores nostrum, ratione quisquam illo quae nisi nesciunt possimus, reprehenderit praesentium non laboriosam similique accusantium earum nam. Earum, voluptates laboriosam.
 </small>
+ <!-- BUSCADOR -->
+ <div class="row" style="margin-top: 15px;">
+  <div class="col-sm-6">
+    <h4 for="">Buscar un lugar</h4>
+  <input type="text" class="form-control" placeholder="Ingrese el nombre del lugar y presione enter" (keyup.enter)="buscarPorTitulo($event.target.value)">
+  </div>
+</div>
   <div class="actions">
     <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
 
@@ -31,18 +38,18 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque, maiore
       <div class="actions">
         <a routerLink="/new/{{item.id}}" class="actions__item zmdi zmdi-edit zmdi-hc-fw" title="Editar"></a>
         <a (click)="deleteNotification(item.id)"class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Editar"></a>
-        
+
 
 
       </div>
     </div>
 
     <div class="card-block">
-      <p > 
+      <p >
               {{item.mensaje}}
       </p>
 
-      <p > 
+      <p >
         {{item.creador}}
 </p>
     </div>

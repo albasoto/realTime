@@ -12,22 +12,8 @@ declare var angular: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  
   constructor(private notificacionService: NotificacionesService, private route: ActivatedRoute) {
-    
+
   }
 
-  
-
-
-
-  
- 
-
-
-
-
-  
- 
 }

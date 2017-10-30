@@ -10,32 +10,33 @@ import 'rxjs/add/operator/map';
 export class NotificacionesService {
   constructor(private db: AngularFireDatabase, private http: Http) { }
   getNotificacion() {
-    //retorna todos los lugares que guarde en la base de datos(lugares es una coleccion puedes crear varias colecciones)
     return this.db.list('notificaciones/').valueChanges();
-  };
+  }
+
   guardarLugar(notificacion) {
 
-    this.db.database.ref('notificaciones/' + notificacion.id).set(notificacion);
-  };
+    this.db.database.ref('notificabciones/' + notificacion.id).set(notificacion);
+  }
 
-  buscar(parametro) {
-
-    this.db.list('/notificaciones', ref => ref.orderByChild('titulo').equalTo(parametro))
-  };
+  buscarNotificaciones(filtro) {
+    // primero nombre de la coleccion que vas a consultar en mi caso tengo la coleccion de lugares
+    //  luego en orderByChild pones por que campo vas a filtrar y en equlTo el valor del filtro
+     return this.db.list('notificaciones/' , ref => ref.orderByChild('titulo').equalTo(filtro)).valueChanges()
+   }
 
 
   editarNotificacion(notificacion) {
     this.db.database.ref('notificaciones/' + notificacion.id).set(notificacion);
-  };
+  }
 
   getOneNotification(id) {
     // obtiene un lugar por id
     return this.db.object('notificaciones/' + id).valueChanges();
-  };
+  }
 
   deleteNotification(id) {
     return this.db.object('/notificaciones/' + id).remove();
-  };
+  }
 
 
 
