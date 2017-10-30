@@ -1,25 +1,67 @@
 <div class="well">
   <a routerLink="/">Inicio</a>
+
 </div>
+<br>
+<br>
+
+
 <div class="">
-  <label for="" class="">Titulo</label>
-  <input required type="text" class="form-control form-control-lg" placeholder="Titulo" [(ngModel)]="notificacion.titulo">
-  <br>
-  <label for="" class="">Tipo</label>
-  <select required class="form-control form-control-lg"  [(ngModel)]="notificacion.tipo">
-    <option value="" disabled selected>Seleccionar una opcion</option>
-    <option value="Opcion 1">Op1</option>
-  </select>
-  <br>
-  <label for="" class="">Mensaje</label>
-  <input required type="text" class="form-control form-control-lg" placeholder="Mensaje" [(ngModel)]="notificacion.mensaje">
-  <label for="" class="">Creador</label>
-  <input required type="text" class="form-control form-control-lg" placeholder="Creador" [(ngModel)]="notificacion.creador">
+
+
+  <div class="input-group col-sm-6">
+
+    <div class="form-group">
+      <input type="text" class="form-control" required placeholder="Titulo" [(ngModel)]="notificacion.titulo">
+      <i class="form-group__bar"></i>
+    </div>
+  </div>
+
 
   <br>
+  <div class="input-group col-sm-6">
+
+      <div class="form-group has-danger">
+        <select required class="form-control" [(ngModel)]="notificacion.tipo">
+          <option value="" disabled selected>Seleccionar una opcion</option>
+          <option value="Opcion 1">Op1</option>
+          <option value="Opcion 2">Op2</option>
+          <option value="Opcion 3">Op3</option>
+          <option value="Opcion 4">Op4</option>
+        </select>
+        <i class="form-group__bar"></i>
+      </div>
+    </div>
+    <br>
+
+  </div>
+  <br>
+  <br>
+
+  <div class="input-group col-sm-6">
+
+    <div class="form-group has-danger">
+      <textarea required class="form-control form-control-danger" rows="5" placeholder="Mensaje..." [(ngModel)]="notificacion.mensaje"></textarea>
+      <i class="form-group__bar"></i>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="input-group col-sm-6">
+
+    <div class="form-group">
+      <input required type="text" class="form-control" placeholder="Creador" [(ngModel)]="notificacion.creador">
+      <i class="form-group__bar"></i>
+    </div>
+  </div>
+  <br>
+  <br>
   <hr>
-  <button class="btn btn-primary" (click)="guardarNotificacion()" >Enviar</button>
-  <button class="btn btn-success" (click)="actualizarNotificacion()" >Actualizar</button>
-  <a routerLink="/" class="btn btn-default">Cancelar</a>
-  
-</div>
+  <div class="input-group col-sm-6">
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="guardarNotificacion()">Guardar</button>
+      <button class="btn btn-success" (click)="actualizarNotificacion()">Actualizar</button>
+      <a routerLink="/" class="btn btn-default">Cancelar</a>
+    </div>
+  </div>

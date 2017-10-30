@@ -17,9 +17,7 @@ import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: NotificacionesComponent},
-  {path: 'new/:id', component: NuevoComponent},
-  
-];
+  {path: 'new/:id', component: NuevoComponent}];
 
 
 @NgModule({
@@ -37,7 +35,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  
+
   providers: [  NotificacionesService],
   bootstrap: [AppComponent]
 })

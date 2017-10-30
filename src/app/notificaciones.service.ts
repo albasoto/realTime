@@ -15,7 +15,7 @@ export class NotificacionesService {
 
   guardarLugar(notificacion) {
 
-    this.db.database.ref('notificabciones/' + notificacion.id).set(notificacion);
+    this.db.database.ref('notificaciones/' + notificacion.id).set(notificacion);
   }
 
   buscarNotificaciones(filtro) {

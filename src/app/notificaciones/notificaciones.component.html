@@ -1,43 +1,49 @@
 <header class="content__title">
-  <h1>Notificaciones</h1>
-  <small>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque, maiores nostrum, ratione quisquam illo quae nisi nesciunt possimus, reprehenderit praesentium non laboriosam similique accusantium earum nam. Earum, voluptates laboriosam.
-</small>
- <!-- BUSCADOR -->
- <div class="row" style="margin-top: 15px;">
-  <div class="col-sm-6">
-    <h4 for="">Buscar un lugar</h4>
-  <input type="text" class="form-control" placeholder="Ingrese el nombre del lugar y presione enter" (keyup.enter)="buscarPorTitulo($event.target.value)">
-  </div>
-</div>
-  <div class="actions">
-    <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
+
+  <!-- BUSCADOR -->
+  <div class="navegation_active chat__search">
+    <div class="form-group">
+      <input type="text" class="navigation__active form-control" placeholder="Buscar título de notificaión..." (keyup.enter)="buscarPorTitulo($event.target.value)">
+
+      <div class="actions">
+        <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
 
 
-    <div class="navigation__active dropdown actions__item" title="Estado">
-      <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a href="" class="dropdown-item">Activos</a>
-        <a href="" class="dropdown-item">Desactivados</a>
+        <div class="navigation__active dropdown actions__item" title="Estado">
+          <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="" class="dropdown-item">click</a>
+           <!-- <a href="" class="dropdown-item">Desactivados</a> -->
 
+          </div>
+        </div>
       </div>
+      <i class="form-group__bar"></i>
     </div>
   </div>
+  <h1>Notificaciones</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo rerum corporis fugiat, necessitatibus quisquam saepe sint
+    ipsum, distinctio eligendi tempora, quod sequi sunt repellat temporibus minus reiciendis amet laborum iusto. </p>
+  <br>
+  <br>
+
 </header>
+
+
 
 <div class="card-demo " *ngFor="let item of notificaciones">
   <div class="card card">
     <!-- div class="card card card-outline-info" -->
 
     <div class="card-header">
-      <h2 class="card-title" > {{item.titulo}}</h2>
+      <h2 class="card-title"> {{item.titulo}}</h2>
       <small class="card-subtitle"> {{item.tipo}}</small>
 
 
 
       <div class="actions">
         <a routerLink="/new/{{item.id}}" class="actions__item zmdi zmdi-edit zmdi-hc-fw" title="Editar"></a>
-        <a (click)="deleteNotification(item.id)"class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Editar"></a>
+        <a (click)="deleteNotification(item.id)" class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Editar"></a>
 
 
 
@@ -45,13 +51,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eaque, maiore
     </div>
 
     <div class="card-block">
-      <p >
-              {{item.mensaje}}
+      <p>
+        {{item.mensaje}}
       </p>
 
-      <p >
+      <p>
         {{item.creador}}
-</p>
+      </p>
     </div>
 
   </div>
