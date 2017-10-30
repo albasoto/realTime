@@ -19,8 +19,7 @@ export class NotificacionesService {
   }
 
   buscarNotificaciones(filtro) {
-    // primero nombre de la coleccion que vas a consultar en mi caso tengo la coleccion de lugares
-    //  luego en orderByChild pones por que campo vas a filtrar y en equlTo el valor del filtro
+ 
      return this.db.list('notificaciones/' , ref => ref.orderByChild('titulo').equalTo(filtro)).valueChanges()
    }
 

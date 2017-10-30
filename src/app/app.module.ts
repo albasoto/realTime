@@ -14,17 +14,21 @@ import { NuevoComponent } from './nuevo/nuevo.component'
 import {RouterModule, Routes} from '@angular/router';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {path: '', component: NotificacionesComponent},
-  {path: 'new/:id', component: NuevoComponent}];
+  {path: 'new/:id', component: NuevoComponent},
+  {path: 'login/:id', component: LoginComponent}
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevoComponent,
-    NotificacionesComponent
+    NotificacionesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

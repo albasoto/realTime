@@ -40,7 +40,6 @@ export class NuevoComponent {
       };
 
       actualizarNotificacion() {
-  
        
             this.notificacionService.editarNotificacion(this.notificacion);
             alert('Datos Editados');
