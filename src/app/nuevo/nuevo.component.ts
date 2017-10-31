@@ -21,9 +21,7 @@ export class NuevoComponent {
     }
   }
 
-  guardarNotificacion() {
-
- 
+  guardarNotificacion() { 
         this.notificacion.id = Date.now();
         if (!this.notificacion.titulo) {
           alert('Ingrese el titulo');

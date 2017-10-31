@@ -15,11 +15,13 @@ import {RouterModule, Routes} from '@angular/router';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 const appRoutes: Routes = [
-  {path: '', component: NotificacionesComponent},
+  {path: '', component: LoginComponent},
   {path: 'new/:id', component: NuevoComponent},
-  {path: 'login/:id', component: LoginComponent}
+  {path: 'notificaciones/:id', component: NotificacionesComponent},
+  {path: 'calendario/:id', component: CalendarioComponent}
 ];
 
 
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     NuevoComponent,
     NotificacionesComponent,
-    LoginComponent
+    LoginComponent,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,

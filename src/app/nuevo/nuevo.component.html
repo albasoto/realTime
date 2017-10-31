@@ -1,164 +1,102 @@
 <div class="well">
-  <a routerLink="/">Inicio</a>
+  <a routerLink="notificaciones/notificaciones">Inicio</a>
 
-</div>
-<br>
-<br>
-
-
-<div class="">
-
-
-  <div class="input-group col-sm-6">
-
-    <div class="form-group">
-      <input type="text" class="form-control" required placeholder="Titulo" [(ngModel)]="notificacion.titulo">
-      <i class="form-group__bar"></i>
-    </div>
-  </div>
 
 
   <br>
-  <div class="input-group col-sm-6">
 
-      <div class="form-group has-danger">
-        <select required class="form-control" [(ngModel)]="notificacion.tipo">
-          <option value="" disabled selected>Seleccionar una opcion</option>
-          <option value="Opcion 1">Op1</option>
-          <option value="Opcion 2">Op2</option>
-          <option value="Opcion 3">Op3</option>
-          <option value="Opcion 4">Op4</option>
-        </select>
-        <i class="form-group__bar"></i>
+
+
+  <div class="content__inner">
+    <header class="content__title">
+      <br>
+      <h1>Notificaciones</h1>
+
+      <div class="actions">
+        <!--<a href="" class="actions__item zmdi zmdi-trending-up"></a>
+                <a href="" class="actions__item zmdi zmdi-check-all"></a>-->
+
+        <div class="dropdown actions__item">
+          <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="" class="dropdown-item">Refresh</a>
+            <a href="" class="dropdown-item">Manage Widgets</a>
+            <a href="" class="dropdown-item">Settings</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <br>
+    </header>
 
-  </div>
-  <br>
-  <br>
-
-  <div class="input-group col-sm-6">
-
-    <div class="form-group has-danger">
-      <textarea required class="form-control form-control-danger" rows="5" placeholder="Mensaje..." [(ngModel)]="notificacion.mensaje"></textarea>
-      <i class="form-group__bar"></i>
-    </div>
-  </div>
-  <br>
-  <br>
-
-  <div class="input-group col-sm-6">
-
-    <div class="form-group">
-      <input required type="text" class="form-control" placeholder="Creador" [(ngModel)]="notificacion.creador">
-      <i class="form-group__bar"></i>
-    </div>
-  </div>
-  <br>
-  <br>
-  <hr>
-  <div class="input-group col-sm-6">
-    <div class="form-group">
-      <button class="btn btn-primary" (click)="guardarNotificacion()">Guardar</button>
-      <button class="btn btn-success" (click)="actualizarNotificacion()">Actualizar</button>
-      <a routerLink="/" class="btn btn-default">Cancelar</a>
-    </div>
-  </div>
-
-  <br>
-  
-
-    
-            <div class="content__inner">
-                <header class="content__title">
-                    <h1>Nueva Notificación</h1>
-
-                    <div class="actions">
-                            <!--<a href="" class="actions__item zmdi zmdi-trending-up"></a>
-                            <a href="" class="actions__item zmdi zmdi-check-all"></a>-->
-
-                            <div class="dropdown actions__item">
-                                <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="" class="dropdown-item">Refresh</a>
-                                    <a href="" class="dropdown-item">Manage Widgets</a>
-                                    <a href="" class="dropdown-item">Settings</a>
-                                </div>
-                            </div>
-                        </div>
-                </header>
-                <form action="">
-                    <div class="card">
+    <div class="card">
 
 
-                        <div class="card-block">
-                                          <br>
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" placeholder="Título">
-                                <i class="form-group__bar"></i>
-                            </div>
+      <div class="card-block">
+        <br>
+        <div class="form-group">
+          <label for="">Título</label>
+          <input type="text" class="form-control" required placeholder="Escribir..." [(ngModel)]="notificacion.titulo">
+          <i class="form-group__bar"></i>
+        </div>
 
-                            <br>
+        <br>
 
-                           <!-- <h3 class="card-block__title">Tipo</h3>-->
+        <!-- <h3 class="card-block__title">Tipo</h3>-->
 
-                            <br>
+        <br>
 
-                            <div class="row">
+        <div class="row">
 
 
 
-                                <div class="col-sm-6 col-md-4">
-                                    <div class="form-group">
-                            
-
-                                        <select class="select2" data-placeholder="Select a brand">
-                                                    <option>Condominio...</option>
-                                                    <option>San Rafael</option>
-                                                    <option>Casa Blanca</option>
-                                                    <option>Manglero vista</option>
-                                                    <option>Boreal</option>
-                                                    <option>Porto Acqua</option>
-                                                </select>
-                                    </div>
-
-                                </div>
-                                <div class="col-sm-6 col-md-4">
-                                        <div class="form-group">
-                                          
-    
-                                            <select class="select2" multiple data-placeholder="Habitantes...">
-                                                <option>Oscar</option>
-                                                <option>Luis</option>
-                                                <option>Joyner</option>
-                                                <option>Marjorie</option>
-                                                <option>Alba</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                            </div>
-                            <br>
-              
-                            <div class="form-group">
-                                <textarea class="form-control textarea-autosize" placeholder="Escriba su mensaje..."></textarea>
-                                <i class="form-group__bar"></i>
-                            </div>
-                            <button type="button" class="btn btn-outline-success">Guardar</button>
-
-                            <br/>
-
-
-                        </div>
-
-                    </div>
-                </form>
-
-
-
-
-
+          <div class="col-sm-6 col-md-4">
+            <label for="">Tipo</label>
+            <div class="form-group">
+              <select required class="form-control" [(ngModel)]="notificacion.tipo">
+                            <option value="" disabled selected>Seleccionar una opcion</option>
+                            <option value="Informativa">Informativa</option>
+                            <option value="Seguridad">Seguridad</option>
+                    
+                          </select>
             </div>
+
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <label for="">Condominio</label>
+            <div class="form-group">
+              <select required class="form-control" [(ngModel)]="notificacion.condominio">
+                                <option value="" disabled selected>Seleccionar una opcion</option>
+                                <option value="Opcion 1">Op1</option>
+                                <option value="Opcion 2">Op2</option>
+                                <option value="Opcion 3">Op3</option>
+                                <option value="Opcion 4">Op4</option>
+                              </select>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="">Mensaje</label>
+          <textarea required class="form-control" placeholder="Escribir máximo 255 caracteres..." [(ngModel)]="notificacion.mensaje"></textarea>
+          <i class="form-group__bar"></i>
+        </div>
+        <br>
+
+        <div class="input-group col-sm-6">
+          <div class="form-group">
+            <button class="btn btn-primary" (click)="guardarNotificacion()">Guardar</button>
+            <button class="btn btn-success" (click)="actualizarNotificacion()">Actualizar</button>
+            <a routerLink="/" class="btn btn-default">Cancelar</a>
+          </div>
+        </div>
+        <br/>
+
+
+      </div>
+
+    </div>
+
+  </div>
 
 
   
