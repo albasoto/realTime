@@ -13,7 +13,7 @@ export class NotificacionesService {
     return this.db.list('notificaciones/').valueChanges();
   }
 
-  guardarLugar(notificacion) {
+  guardarNotificaciones(notificacion) {
 
     this.db.database.ref('notificaciones/' + notificacion.id).set(notificacion);
   }

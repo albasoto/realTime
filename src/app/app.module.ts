@@ -18,9 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 
 const appRoutes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: NotificacionesComponent},
   {path: 'new/:id', component: NuevoComponent},
-  {path: 'notificaciones/:id', component: NotificacionesComponent},
   {path: 'calendario/:id', component: CalendarioComponent}
 ];
 

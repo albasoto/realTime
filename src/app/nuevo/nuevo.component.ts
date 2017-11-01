@@ -30,7 +30,7 @@ export class NuevoComponent {
         } else if (!this.notificacion.mensaje) {
           alert('Escriba el mensaje');
         }else{
-          this.notificacionService.guardarLugar(this.notificacion)
+          this.notificacionService.guardarNotificaciones(this.notificacion)
           alert('Datos Guardados');
           this.notificacion = {};
         }
