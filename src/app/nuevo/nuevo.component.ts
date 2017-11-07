@@ -8,6 +8,7 @@ import {NotificacionesService} from '../notificaciones.service'
   styleUrls: ['./nuevo.component.css']
 })
 export class NuevoComponent {
+  
 
   notificacion: any = {};
   id = null;

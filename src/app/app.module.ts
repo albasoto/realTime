@@ -17,10 +17,14 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 
+import {LoginWebServis} from './webServis/login.webServis';
+import {GuardiaLogin} from './webServis/guardiaLogin';
+
 const appRoutes: Routes = [
   {path: '', component: NotificacionesComponent},
-  {path: 'new/:id', component: NuevoComponent},
-  {path: 'calendario/:id', component: CalendarioComponent}
+  {path: 'new/:id', component: NuevoComponent, canActivate: [GuardiaLogin]},
+  {path: 'calendario/:id', component: CalendarioComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 
@@ -42,7 +46,7 @@ const appRoutes: Routes = [
     FormsModule
   ],
 
-  providers: [  NotificacionesService],
+  providers: [  NotificacionesService, LoginWebServis, GuardiaLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
