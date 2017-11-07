@@ -17,13 +17,18 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 
-import {LoginWebServis} from './webServis/login.webServis';
-import {GuardiaLogin} from './webServis/guardiaLogin';
+import {AuthorizationService} from "./servicios/authorization.service";
+import {GuardiaLogin} from "./servicios/guardiaLogin.service";
+import {RegistroComponent} from "./crear/crear.component";
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 
 const appRoutes: Routes = [
   {path: '', component: NotificacionesComponent},
-  {path: 'new/:id', component: NuevoComponent, canActivate: [GuardiaLogin]},
+  {path: 'new/:id', component: NuevoComponent},
   {path: 'calendario/:id', component: CalendarioComponent},
+  {path: 'crear', component: RegistroComponent},
   {path: 'login', component: LoginComponent}
 ];
 
@@ -34,7 +39,8 @@ const appRoutes: Routes = [
     NuevoComponent,
     NotificacionesComponent,
     LoginComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +49,11 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    AngularFireAuthModule
   ],
 
-  providers: [  NotificacionesService, LoginWebServis, GuardiaLogin],
+  providers: [  NotificacionesService, AuthorizationService, GuardiaLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
