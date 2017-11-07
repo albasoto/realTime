@@ -1,0 +1,14 @@
+POST
+http://192.168.0.86:8080/web/wservices/user/logincase1.do?userName=jperez&password=admin
+
+Content-Type: application/x-www-form-urlencoded
+Authorization: jQgv/+JjxkFZwSWehbbAVg==
+
+userName=jperez
+password=admin
+
+Código 200: OK
+Código 401: No tiene permisos
+Código 403: Licencia no activa
+Código 404: Usuario no registrado en el sistema
+Código 500: Ocurrió un error en el servidor
