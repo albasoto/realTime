@@ -4,7 +4,7 @@
     <header class="content__title">
       <br>
 
-      <h1>Notificaciones</h1>
+      <h1>Crear/Editar - Notificaciones</h1>
 
       <div class="actions">
         <!--<a href="" class="actions__item zmdi zmdi-trending-up"></a>
@@ -13,9 +13,9 @@
         <div class="dropdown actions__item">
           <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
           <div class="dropdown-menu dropdown-menu-right">
-            <a href="" class="dropdown-item">Refresh</a>
+            <!-- <a href="" class="dropdown-item">Refresh</a>
             <a href="" class="dropdown-item">Manage Widgets</a>
-            <a href="" class="dropdown-item">Settings</a>
+            <a href="" class="dropdown-item">Settings</a> -->
           </div>
         </div>
       </div>
@@ -27,11 +27,7 @@
       <div class="card-block">
 
         <br>
-        <div class="form-group">
-          <label for="">Título</label>
-          <input type="text" class="form-control" required placeholder="Escribir..." [(ngModel)]="notificacion.titulo">
-          <i class="form-group__bar"></i>
-        </div>
+
 
         <br>
 
@@ -40,22 +36,30 @@
         <br>
 
         <div class="row">
+          <div class="col-sm-8">
+            <label for="">Título</label>
+            <div class="form-group ">
+              <input type="text" class="form-control" required maxlength="50"  placeholder="Escribir..." [(ngModel)]="notificacion.titulo">
+              <i class="form-group__bar"></i>
+            </div>
+          </div>
 
 
 
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-4">
             <label for="">Tipo</label>
             <div class="form-group">
               <select required class="form-control" [(ngModel)]="notificacion.tipo">
-                            <option value="" disabled selected>Seleccionar una opcion</option>
-                            <option value="Informativa">Informativa</option>
-                            <option value="Seguridad">Seguridad</option>
+                <option value="" disabled selected>Seleccionar una opcion</option>
+                <option value="Informativa">Informativa</option>
+                <option value="Seguridad">Seguridad</option>
 
-                          </select>
+              </select>
             </div>
 
           </div>
-          <div class="col-sm-6 col-md-4">
+
+          <!-- <div class="col-sm-6 col-md-4">
             <label for="">Condominio</label>
             <div class="form-group">
               <select required class="form-control" [(ngModel)]="notificacion.condominio">
@@ -67,6 +71,7 @@
                               </select>
             </div>
           </div>
+        -->
         </div>
         <br>
 
@@ -92,7 +97,3 @@
     </div>
 
   </div>
-
-
-
-

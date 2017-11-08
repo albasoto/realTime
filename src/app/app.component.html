@@ -27,11 +27,7 @@
 
 
         <ul class="top-nav">
-          <li class="hidden-xl-up">
-            <a href="" data-ma-action="search-open">
-              <i class="zmdi zmdi-search"></i>
-            </a>
-          </li>
+
           <!--
                       <li class="dropdown">
                           <a href="" data-toggle="dropdown"><i class="zmdi zmdi-email"></i></a>
@@ -109,7 +105,7 @@
                           </div>
                       </li>
                   -->
-
+ <!--
           <li class="dropdown top-nav__notifications">
             <a href="" data-toggle="dropdown" class="top-nav__notify">
               <i class="zmdi zmdi-notifications"></i>
@@ -205,14 +201,14 @@
           </li>
 
 
-          <li class="dropdown hidden-xs-down">
+         <li class="dropdown hidden-xs-down">
             <a href="" data-toggle="dropdown">
               <i class="zmdi zmdi-apps"></i>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
               <div class="row app-shortcuts">
-                <a class="col-4 app-shortcuts__item" href="calendar.html">
+                <a class="col-4 app-shortcuts__item" routerLink="/calendario/calendario">
                   <i class="zmdi zmdi-calendar bg-red"></i>
                   <small class="">Calendar</small>
                 </a>
@@ -221,7 +217,7 @@
 
               </div>
             </div>
-          </li>
+          </li> -->
 
           <li class="dropdown hidden-xs-down">
             <a href="" data-toggle="dropdown">
@@ -278,8 +274,8 @@
             <li routerLinkActive="active" *ngIf="!isLogeado">
               <a routerLink="/login">Ingresar</a>
             </li>
-            <li routerLinkActive="active" *ngIf="isLogeado">
-              <a (click)="finalizarSesion()">Salir</a>
+            <li  routerLinkActive="active" *ngIf="isLogeado">
+              <a  (click)="finalizarSesion()">Salir</a>
             </li>
 
 
@@ -505,6 +501,7 @@
 
     <!-- Javascript -->
     <!-- Vendors -->
+
 
     <toaster-container></toaster-container>
   </body>

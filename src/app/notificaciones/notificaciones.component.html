@@ -9,20 +9,20 @@
         <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
 
 
-        <div class="navigation__active dropdown actions__item" title="Estado">
+        <!-- <div class="navigation__active dropdown actions__item" title="Estado">
           <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
           <div class="dropdown-menu dropdown-menu-right">
             <a href="" class="dropdown-item">click</a>
-           <!-- <a href="" class="dropdown-item">Desactivados</a> -->
+          <a href="" class="dropdown-item">Desactivados</a>
           </div>
         </div>
+      -->
       </div>
       <i class="form-group__bar"></i>
     </div>
   </div>
   <h1>Notificaciones</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo rerum corporis fugiat, necessitatibus quisquam saepe sint
-    ipsum, distinctio eligendi tempora, quod sequi sunt repellat temporibus minus reiciendis amet laborum iusto. </p>
+
   <br>
   <br>
 
@@ -30,7 +30,7 @@
 
 
 
-<div class="card-demo " *ngFor="let item of notificaciones | filtroNombreNotificacion : tituloFilter">
+<div class="card-demo" *ngFor="let item of notificaciones | filtroNombreNotificacion : tituloFilter">
   <div class="card card">
     <!-- div class="card card card-outline-info" -->
 
@@ -42,7 +42,7 @@
 
       <div class="actions">
         <a routerLink="/new/{{item.id}}" class="actions__item zmdi zmdi-edit zmdi-hc-fw" title="Editar"></a>
-       <a (click)="deleteNotification(item.id)" class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Editar"></a>
+       <a (click)="deleteNotification(item.id)" class="actions__item zmdi zmdi-delete zmdi-hc-fw" title="Eliminar"></a>
       </div>
     </div>
 

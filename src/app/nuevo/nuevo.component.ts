@@ -39,7 +39,7 @@ export class NuevoComponent {
         }else{
           this.notificacionService.guardarNotificaciones(this.notificacion)
           this._toasterService.pop('success', 'Correcto', 'Datos Guardados');
-          this.navegar.navigate([''])
+          this.navegar.navigate(['']);
           this.notificacion = {};
         }
 
@@ -49,6 +49,7 @@ export class NuevoComponent {
 
             this.notificacionService.editarNotificacion(this.notificacion);
             this._toasterService.pop('success', 'Correcto', 'Datos Editados');
+             this.navegar.navigate(['']);
             this.notificacion = {};
 
       }
