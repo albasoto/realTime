@@ -3,7 +3,7 @@
   <!-- BUSCADOR -->
   <div class="navegation_active chat__search">
     <div class="form-group">
-      <input type="text" class="navigation__active form-control" placeholder="Buscar título de notificaión..." (keyup.enter)="buscarPorTitulo($event.target.value)">
+      <input type="text" class="navigation__active form-control" placeholder="Buscar título de notificaión..."  [(ngModel)]='tituloFilter'>
 
       <div class="actions">
         <a routerLink="/new/new" class="navigation__active actions__item zmdi zmdi-plus" title="Agregar"></a>
@@ -30,7 +30,7 @@
 
 
 
-<div class="card-demo " *ngFor="let item of notificaciones">
+<div class="card-demo " *ngFor="let item of notificaciones | filtroNombreNotificacion : tituloFilter">
   <div class="card card">
     <!-- div class="card card card-outline-info" -->
 

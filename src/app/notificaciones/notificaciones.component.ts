@@ -2,6 +2,7 @@ import {NotificacionesService} from '../notificaciones.service';
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import {AuthorizationService} from '../servicios/authorization.service';
 import {Popup} from 'ng2-opd-popup';
+import {ToasterService} from "angular2-toaster";
 
 @Component({
   selector: 'app-notificaciones',
@@ -9,10 +10,11 @@ import {Popup} from 'ng2-opd-popup';
   styleUrls: ['./notificaciones.component.css']
 })
 export class NotificacionesComponent  {
-
+  tituloFilter = ''
   isLogeado = false;
   notificaciones = null;
-  constructor(private db: NotificacionesService, private _autorizacion: AuthorizationService) {
+  email= null
+  constructor(private db: NotificacionesService, private _autorizacion: AuthorizationService,  private _toasterService: ToasterService) {
     this.db.getNotificacion().subscribe(
       notificaciones => {
         this.notificaciones = notificaciones;
@@ -25,6 +27,7 @@ export class NotificacionesComponent  {
         usuario =>{
           if(usuario){
             this.isLogeado = true;
+            this.email = _autorizacion.getEmail();
           }else{
             this.isLogeado = false;
           }
@@ -48,10 +51,13 @@ export class NotificacionesComponent  {
       animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown'
   };
     this.popup1.show(this.popup1.options);*/
-let confirmacion = confirm("Esta seguro de elimiar")
-   if(this.isLogeado && confirmacion) {
+
+   if(this.isLogeado) {
+    let confirmacion = confirm("Esta seguro de elimiar")
+     if(confirmacion) {
       this.db.deleteNotification(id);
-      alert('Datos Eliminados');
+      this._toasterService.pop('success', 'Correcto', 'Datos Eliminados');
+     }
     }
 
   }

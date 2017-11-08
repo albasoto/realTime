@@ -14,11 +14,13 @@ declare var angular: any;
 })
 export class AppComponent {
   isLogeado = false;
+  email = null;
   constructor(private _authenticatio: AuthorizationService){
     this._authenticatio.isLogged().subscribe(
       usuario =>{
         if(usuario){
           this.isLogeado = true;
+          this.email = _authenticatio.getEmail();
         }else{
           this.isLogeado = false;
         }

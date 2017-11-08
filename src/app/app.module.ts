@@ -21,8 +21,11 @@ import {AuthorizationService} from "./servicios/authorization.service";
 import {GuardiaLogin} from "./servicios/guardiaLogin.service";
 import {RegistroComponent} from "./crear/crear.component";
 import { AngularFireAuthModule } from 'angularfire2/auth';
-//import {PopupModule} from 'ng2-opd-popup';
+import { ToasterModule } from 'angular2-toaster';
 
+//import {PopupModule} from 'ng2-opd-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FiltroNombrePipe} from './pipes/filtroNombre.pipe'
 
 
 const appRoutes: Routes = [
@@ -41,7 +44,8 @@ const appRoutes: Routes = [
     NotificacionesComponent,
     LoginComponent,
     CalendarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    FiltroNombrePipe
   ],
   imports: [
     BrowserModule,
@@ -52,9 +56,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     AngularFireAuthModule,
+    BrowserAnimationsModule,
+    ToasterModule
+
    // PopupModule.forRoot()
   ],
-
   providers: [  NotificacionesService, AuthorizationService, GuardiaLogin],
   bootstrap: [AppComponent]
 })

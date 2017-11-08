@@ -1,9 +1,9 @@
 <div class="well">
- 
+
   <div class="content__inner">
     <header class="content__title">
       <br>
-   
+
       <h1>Notificaciones</h1>
 
       <div class="actions">
@@ -23,9 +23,9 @@
 
     <div class="card">
 
-     
+
       <div class="card-block">
-     
+
         <br>
         <div class="form-group">
           <label for="">Título</label>
@@ -50,7 +50,7 @@
                             <option value="" disabled selected>Seleccionar una opcion</option>
                             <option value="Informativa">Informativa</option>
                             <option value="Seguridad">Seguridad</option>
-                    
+
                           </select>
             </div>
 
@@ -79,20 +79,20 @@
 
         <div class="input-group col-sm-6">
           <div class="form-group">
-            <button class="btn btn-primary" (click)="guardarNotificacion()">Guardar</button>
-            <button class="btn btn-success" (click)="actualizarNotificacion()">Actualizar</button>
+            <button class="btn btn-primary" (click)="guardarNotificacion()" *ngIf=" id == 'new' ">Guardar</button>
+            <button class="btn btn-success" (click)="actualizarNotificacion()" *ngIf=" id != 'new' ">Actualizar</button>
             <a routerLink="/" class="btn btn-default">Cancelar</a>
           </div>
         </div>
         <br/>
-        
+
 
       </div>
 
     </div>
 
   </div>
-  
 
 
-  
+
+
