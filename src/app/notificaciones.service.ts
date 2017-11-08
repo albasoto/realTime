@@ -34,7 +34,7 @@ export class NotificacionesService {
   }
 
   deleteNotification(id) {
-    return this.db.object('/notificaciones/' + id).remove();
+    return this.db.object('notificaciones/' + id).remove();
   }
 
 
