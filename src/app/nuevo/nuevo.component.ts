@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {NotificacionesService} from '../notificaciones.service'
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nuevo',
@@ -8,11 +9,14 @@ import {NotificacionesService} from '../notificaciones.service'
   styleUrls: ['./nuevo.component.css']
 })
 export class NuevoComponent {
-  
+
 
   notificacion: any = {};
   id = null;
-  constructor(private notificacionService: NotificacionesService, private route: ActivatedRoute) {
+  constructor(private notificacionService: NotificacionesService,
+               private route: ActivatedRoute,
+               private navegar: Router
+  ) {
     this.id = this.route.snapshot.params['id'];
     if (this.id !== 'new') {
       this.notificacionService.getOneNotification(this.id).subscribe(
@@ -22,7 +26,7 @@ export class NuevoComponent {
     }
   }
 
-  guardarNotificacion() { 
+  guardarNotificacion() {
         this.notificacion.id = Date.now();
         if (!this.notificacion.titulo) {
           alert('Ingrese el titulo');
@@ -33,21 +37,22 @@ export class NuevoComponent {
         }else{
           this.notificacionService.guardarNotificaciones(this.notificacion)
           alert('Datos Guardados');
+          this.navegar.navigate([''])
           this.notificacion = {};
         }
-       
+
       };
 
       actualizarNotificacion() {
-       
+
             this.notificacionService.editarNotificacion(this.notificacion);
             alert('Datos Editados');
             this.notificacion = {};
-     
+
       }
- 
 
 
- 
+
+
 
 }

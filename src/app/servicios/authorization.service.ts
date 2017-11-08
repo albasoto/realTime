@@ -6,14 +6,14 @@ import {AngularFireAuth} from "angularfire2/auth";
 @Injectable()
 
 export class AuthorizationService {
-  
-  
+
+
 
   // verifica si esta logeado
   logeado = false;
   constructor(private _firebaseAuth: AngularFireAuth, private _router: Router) {
   }
-  
+
 
   registro(email, password) {
     console.log(email, password)
@@ -42,8 +42,12 @@ export class AuthorizationService {
   };
 
 
-  // llamo a esta funcion para verificar si esta logeado
   isLogged() {
-    return this.logeado;
-  }
+    return this._firebaseAuth.authState
+ }
+
+ cerrarSesion(){
+  this._firebaseAuth.auth.signOut();
+  this._router.navigate(['/login']);
+}
 }

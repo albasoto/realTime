@@ -6,11 +6,24 @@ import {AuthorizationService} from './authorization.service';
 
 export class GuardiaLogin implements  CanActivate {
 
-  constructor(private _login: AuthorizationService ) {
+  isLogeado= false;
+  constructor(private _authenticatio: AuthorizationService){
+    this._authenticatio.isLogged().subscribe(
+      usuario =>{
+        if(usuario){
+          this.isLogeado = true;
+        }else{
+          this.isLogeado = false;
+        }
+      }, error => {
+        this.isLogeado = false;
+        console.log(error);
+      });
   }
-  canActivate() {
-    // lamma a la funcion isLogged que esta creada en login.webServis verifica si esta logeado o no
-    return this._login.isLogged();
+
+  // este es el guardia
+  canActivate(){
+    return this.isLogeado;
   }
 }
 

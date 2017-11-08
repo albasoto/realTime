@@ -21,12 +21,13 @@ import {AuthorizationService} from "./servicios/authorization.service";
 import {GuardiaLogin} from "./servicios/guardiaLogin.service";
 import {RegistroComponent} from "./crear/crear.component";
 import { AngularFireAuthModule } from 'angularfire2/auth';
+//import {PopupModule} from 'ng2-opd-popup';
 
 
 
 const appRoutes: Routes = [
   {path: '', component: NotificacionesComponent},
-  {path: 'new/:id', component: NuevoComponent},
+  {path: 'new/:id', component: NuevoComponent, canActivate: [GuardiaLogin]},
   {path: 'calendario/:id', component: CalendarioComponent},
   {path: 'crear', component: RegistroComponent},
   {path: 'login', component: LoginComponent}
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+   // PopupModule.forRoot()
   ],
 
   providers: [  NotificacionesService, AuthorizationService, GuardiaLogin],

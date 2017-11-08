@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import {NotificacionesService} from '../app/notificaciones.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthorizationService} from './servicios/authorization.service';
 declare var angular: any;
 
 @Component({
@@ -12,8 +13,23 @@ declare var angular: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private notificacionService: NotificacionesService, private route: ActivatedRoute) {
-
+  isLogeado = false;
+  constructor(private _authenticatio: AuthorizationService){
+    this._authenticatio.isLogged().subscribe(
+      usuario =>{
+        if(usuario){
+          this.isLogeado = true;
+        }else{
+          this.isLogeado = false;
+        }
+      }, error => {
+        this.isLogeado = false;
+        console.log(error);
+      });
   }
+
+  finalizarSesion(){
+    this._authenticatio.cerrarSesion();
+   }
 
 }
