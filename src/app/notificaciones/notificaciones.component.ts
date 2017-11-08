@@ -1,7 +1,7 @@
 import {NotificacionesService} from '../notificaciones.service';
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import {AuthorizationService} from '../servicios/authorization.service';
-import {Popup} from 'ng2-opd-popup';
+
 import {ToasterService} from "angular2-toaster";
 
 @Component({

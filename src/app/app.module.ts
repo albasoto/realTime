@@ -23,7 +23,6 @@ import {RegistroComponent} from "./crear/crear.component";
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToasterModule } from 'angular2-toaster';
 
-//import {PopupModule} from 'ng2-opd-popup';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FiltroNombrePipe} from './pipes/filtroNombre.pipe'
 
@@ -59,7 +58,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ToasterModule
 
-   // PopupModule.forRoot()
+
   ],
   providers: [  NotificacionesService, AuthorizationService, GuardiaLogin],
   bootstrap: [AppComponent]
